@@ -212,6 +212,10 @@ Note : if you did not specify any version,  k8s automatically take latest versio
 ##### Doc Ref : <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/">Creating a cluster with kubeadm</a>
 At this point, you have two nodes with ```kubeadm```, ```kubelet```, and ```kubectl``` installed. Now you initialize the Kubernetes control plane, which will manage the worker node and the pods running within the cluster.
 
+#### if facing any issue on starting kubeadm 
+```
+Steps to Enable CRI for containerd -> on chatgpt
+```
 ##### Run the following command on the controlplane node to initialize your Kubernetes cluster:
 
 ```
