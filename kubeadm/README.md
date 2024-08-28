@@ -297,6 +297,9 @@ Then you can join any number of worker nodes by running the following on each as
 kubeadm join 172.31.5.211:6443 --token oii8fh.nit4nweml1rxeii7 \
 	--discovery-token-ca-cert-hash sha256:4fdc683cb47359ca4e5373527c36a1e62f5c73d9a472884d630429b4136cb761 
  ```
+
+##### Open port 6443 is kubeadm join is not happening
+
 ##### IMP points to be noted : 
 
 ![6207e8af12ab387fa42a0a50_oE6KaYO](https://user-images.githubusercontent.com/103893307/205311627-1a9a21d3-cf71-4887-818c-d06666a64633.png)
