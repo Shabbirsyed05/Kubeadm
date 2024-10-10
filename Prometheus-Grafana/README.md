@@ -104,6 +104,6 @@ Under connections --> Add connections --> Create a Prometheus Data source
 Under connections --> Data sources --> Prometheus --> Enter url of prometheus --> Save and test.
 ```
 ```
-Home -> Dashboard -> New -> Import -> copy the Dashboard of from Grafana website (17119) , Datasource -> Promethus => import
+Home -> Dashboard -> New -> Import -> copy the Dashboard of from Grafana website (17119) (315) , Datasource -> Promethus => import
 ```
 ```
