@@ -88,6 +88,9 @@ helm install grafana -f values.yaml -n monitoring .
 ```
 kubectl get all -n monitoring
 ```
+```
+Copy the newly create LoadBalancer and paste it in chrome
+```
 
 ```
 kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
@@ -99,4 +102,8 @@ Under connections --> Add connections --> Create a Prometheus Data source
 - Add prometheus url
  ```
 Under connections --> Data sources --> Prometheus --> Enter url of prometheus --> Save and test.
+```
+```
+Home -> Dashboard -> New -> Import -> copy the Dashboard of from Grafana website (17119) , Datasource -> Promethus => import
+```
 ```
