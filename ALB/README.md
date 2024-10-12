@@ -80,6 +80,13 @@ Policy ARN:  arn:aws:iam::180789647333:policy/AWSLoadBalancerControllerIAMPolicy
 # Verify if any existing service account
 kubectl get sa -n kube-system
 kubectl get sa aws-load-balancer-controller -n kube-system
+
+OIDC Provider :
+eksctl utils associate-iam-oidc-provider \
+    --region us-east-1 \
+    --cluster eksdemo \
+    --approve
+
 Obseravation:
 1. Nothing with name "aws-load-balancer-controller" should exist
 
