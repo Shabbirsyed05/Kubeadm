@@ -46,12 +46,20 @@ AWS Load Balancer Controller - Ingress SSL
     # SSL Redirect Setting
     alb.ingress.kubernetes.io/ssl-redirect: '443'   
 ```
+git clone https://github.com/Shabbirsyed05/Kubeadm.git
+cd kubeadm
+cd ALB
+cd manifests
+ls
+aws -> certificate manager -> Certificate -> Copy the arn
+vi ALB-Ingress-SSL.yml (replace the certificate-arn with above arn)
+cd ..
 
 ### Step-05: Deploy all manifests and test
 
 ```t
 # Deploy kube-manifests
-kubectl apply -f kube-manifests/
+kubectl apply -f manifests/
 
 # Verify Ingress Resource
 kubectl get ingress
@@ -63,6 +71,7 @@ kubectl get pods
 # Verify NodePort Services
 kubectl get svc
 ```
+- aws -> LoadBalancer
 **Verify Load Balancer & Target Groups**
 - Load Balancer -  Listeneres (Verify both 80 & 443) 
 - Load Balancer - Rules (Verify both 80 & 443 listeners) 
@@ -76,6 +85,7 @@ kubectl get svc
 - Create a **Record Set**
   - **Name:** www.cloudworld.fun
   - **Alias:** yes
+  - **Value/Route traffic to:** : Alias to Application and Classic Load Balancer , region : us-east-1 , choose LoadBalancer : select from drop don
   - **Alias Target:** Copy our ALB DNS Name here (Sample: ssl-ingress-551932098.us-east-1.elb.amazonaws.com)
   - Click on **Create**
 
@@ -96,7 +106,7 @@ https://www.cloudworld.fun/
 ### Step-08: Clean Up
 ```t
 # Delete Manifests
-kubectl delete -f kube-manifests/
+kubectl delete -f manifests/
 
 ## Delete Route53 Record Set
 - Delete Route53 Record we created (www.cloudworld.fun)
